@@ -5,7 +5,7 @@
 	<key>Description</key>
 	<string>Downloads the latest version of Slack and makes a pkg of it</string>
 	<key>Identifier</key>
-	<string>com.github.dmitriychemikos.autopkgs.pkg.slack</string>
+	<string>com.github.dmitriychemikos.autopkgs.pkg.Slack</string>
 	<key>Input</key>
 	<dict>
 		<key>NAME</key>
@@ -16,7 +16,7 @@
 	<key>MinimumVersion</key>
 	<string>0.2.0</string>
 	<key>ParentRecipe</key>
-	<string>com.github.dmitriychemikos.autopkgs.download.slack</string>
+	<string>com.github.dmitriychemikos.autopkgs.download.Slack</string>
 	<key>Process</key>
 	<array>
 		<dict>
