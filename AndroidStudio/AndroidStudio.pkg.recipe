@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Description</key>
+	<string>Downloads latest Android Studio disk image and builds a package.</string>
+	<key>Identifier</key>
+	<string>com.github.dmitriychemikos.autopkgs.pkg.AndroidStudio</string>
+	<key>Input</key>
+	<dict>
+		<key>NAME</key>
+		<string>Android Studio</string>
+	</dict>
+	<key>MinimumVersion</key>
+	<string>0.4.0</string>
+	<key>ParentRecipe</key>
+	<string>com.github.dmitriychemikos.autopkgs.download.AndroidStudio</string>
+	<key>Process</key>
+	<array>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>dmg_path</key>
+				<string>%pathname%</string>
+			</dict>
+			<key>Processor</key>
+			<string>AppDmgVersioner</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_path</key>
+				<string>%pathname%/%app_name%</string>
+				<key>requirement</key>
+				<string>identifier "com.google.android.studio" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = EQHXZ8M8AV</string>
+			</dict>
+			<key>Processor</key>
+			<string>CodeSignatureVerifier</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>input_plist_path</key>
+				<string>%pathname%/%app_name%/Contents/Info.plist</string>
+			</dict>
+			<key>Processor</key>
+			<string>com.github.dmitriychemikos.autopkgs.download.AndroidStudio/MinimumOSExtractor</string>
+		</dict>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>app_path</key>
+				<string>%pathname%/%app_name%</string>
+			</dict>
+			<key>Processor</key>
+			<string>AppPkgCreator</string>
+		</dict>
+	</array>
+</dict>
+</plist>
