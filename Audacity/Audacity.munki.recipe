@@ -10,7 +10,7 @@
     This recipe downloads the latest Audacity and imports onto Munki.
     For more information see: https://macmule.com/2019/03/17/fosshub-autopkg</string>
     <key>Identifier</key>
-    <string>com.github.dataJAR-recipes.munki.Audacity</string>
+    <string>com.github.dmitriychemikos.autopkgs.munki.Audacity</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
@@ -36,7 +36,7 @@
     <key>MinimumVersion</key>
     <string>0.2.9</string>
     <key>ParentRecipe</key>
-    <string>com.github.dataJAR-recipes.download.Audacity</string>
+    <string>com.github.dmitriychemikos.autopkgs.download.Audacity</string>
     <key>Process</key>
     <array>
         <dict>
