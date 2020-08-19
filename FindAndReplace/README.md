@@ -15,5 +15,5 @@ Here's an example of using FindAndReplace to replace http:/// in a developer's S
         <string>https://scrivener.s3.amazonaws.com</string>
     </dict>
     <key>Processor</key>
-    <string>com.github.homebysix.FindAndReplace/FindAndReplace</string>
+    <string>com.github.dmitriychemikos.autopkgs.FindAndReplace/FindAndReplace</string>
 </dict>
